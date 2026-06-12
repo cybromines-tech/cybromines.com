@@ -58,7 +58,8 @@ jobs:
 
       - name: Install Vercel CLI
         if: steps.guard.outputs.run == 'true'
-        run: pnpm add -g vercel@latest
+        # Use npm for the global CLI (its global bin is on PATH; pnpm -g is not).
+        run: npm i -g vercel@latest
 
       - name: Pull Vercel project settings & env
         if: steps.guard.outputs.run == 'true'
