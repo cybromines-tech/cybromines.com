@@ -41,7 +41,7 @@ export function IntegrationsDuo() {
           subtitle="Connect WhatsApp and Facebook to your CRM so every conversation and every ad click becomes a tracked, actionable lead."
         />
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2">
           <Reveal as="article">
             <div className="surface-card flex h-full flex-col gap-6 p-7 transition-colors hover:border-border-strong">
               <div className="flex items-start justify-between">

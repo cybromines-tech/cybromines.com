@@ -15,7 +15,7 @@ export function AiConsultingBand() {
   return (
     <section className="py-24 md:py-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal delay={1} className="order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
             <AiToolsHub />
           </Reveal>

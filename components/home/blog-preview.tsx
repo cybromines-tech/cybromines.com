@@ -31,7 +31,7 @@ export function BlogPreview() {
           </Link>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3">
           {posts.map((post, i) => (
             <Reveal key={post.slug} delay={i} as="div">
               <BlogCard post={post} />

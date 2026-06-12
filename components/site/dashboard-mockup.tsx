@@ -115,7 +115,7 @@ export function DashboardMockup({ className }: { className?: string }) {
           </div>
 
           {/* chart + side list */}
-          <div className="grid gap-2.5 lg:grid-cols-[1.6fr_1fr]">
+          <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-[1.6fr_1fr]">
             <div className="rounded-xl border border-border bg-background p-4">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-[12px] font-medium text-foreground">

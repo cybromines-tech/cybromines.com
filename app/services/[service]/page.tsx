@@ -86,7 +86,7 @@ export default async function ServiceDetailPage({
             title="A complete engagement, end to end"
             subtitle="No surprises and no gaps — here's exactly what you get when you work with us."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {svc.included.map((item, i) => (
               <Reveal key={item.title} delay={i % 3} as="div">
                 <FeatureCard
@@ -110,7 +110,7 @@ export default async function ServiceDetailPage({
       {/* Tech stack + engagement */}
       <section className="border-y border-border bg-surface/30 py-24 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             {svc.stack ? (
               <Reveal>
                 <span className="eyebrow">Tech we build on</span>

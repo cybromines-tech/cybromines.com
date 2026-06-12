@@ -49,7 +49,7 @@ export function BlogListing({
         <>
           {featured && <BlogCard post={featured} featured />}
           {rest.length > 0 && (
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {rest.map((post) => (
                 <BlogCard key={post.slug} post={post} />
               ))}

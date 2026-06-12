@@ -108,7 +108,7 @@ export default function AboutPage() {
             eyebrow="What we value"
             title="The principles behind the product"
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i % 2} as="div">
                 <div className="surface-card flex h-full gap-5 p-7">
@@ -133,7 +133,7 @@ export default function AboutPage() {
       {/* HQ */}
       <section className="border-y border-border bg-surface/30 py-24 md:py-32">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2">
                 <MapPin className="size-3.5 text-cyan" /> Headquarters
@@ -197,7 +197,7 @@ export default function AboutPage() {
             title="The team behind the platform"
             subtitle="A senior team of product, engineering, and domain experts who've built and run enterprise systems before."
           />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {leadership.map((person, i) => (
               <Reveal key={person.name} delay={i} as="div">
                 <div className="surface-card flex h-full flex-col items-center gap-3 p-7 text-center">

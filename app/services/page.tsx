@@ -40,7 +40,7 @@ export default function ServicesPage() {
                 <Reveal key={service.slug} delay={i} as="article">
                   <Link
                     href={`/services/${service.slug}`}
-                    className="group grid gap-6 rounded-card border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong md:grid-cols-[auto_1fr_auto] md:items-center md:p-9"
+                    className="group grid grid-cols-1 gap-6 rounded-card border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong md:grid-cols-[auto_1fr_auto] md:items-center md:p-9"
                   >
                     <span className="inline-flex size-14 items-center justify-center rounded-2xl border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
                       <Icon className="size-6" />

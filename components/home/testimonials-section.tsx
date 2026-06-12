@@ -12,7 +12,7 @@ export function TestimonialsSection() {
           eyebrow="Customers"
           title="Operators who stopped fighting their software"
         />
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i} as="div">
               <TestimonialCard testimonial={t} />

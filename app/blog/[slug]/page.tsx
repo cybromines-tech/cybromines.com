@@ -142,7 +142,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* Body + TOC */}
-        <div className="mx-auto mt-12 grid max-w-6xl gap-12 lg:grid-cols-[1fr_15rem]">
+        <div className="mx-auto mt-12 grid grid-cols-1 max-w-6xl gap-12 lg:grid-cols-[1fr_15rem]">
           <div className="prose-cybromines prose max-w-3xl">
             <MdxContent source={post.content} />
           </div>
@@ -163,7 +163,7 @@ export default async function BlogPostPage({
         {(prev || next) && (
           <nav
             aria-label="More posts"
-            className="mx-auto mt-16 grid max-w-3xl gap-4 border-t border-border pt-8 sm:grid-cols-2"
+            className="mx-auto mt-16 grid grid-cols-1 max-w-3xl gap-4 border-t border-border pt-8 sm:grid-cols-2"
           >
             {prev ? (
               <Link
@@ -206,7 +206,7 @@ export default async function BlogPostPage({
             <h2 className="font-display text-2xl font-semibold tracking-tight">
               Related reading
             </h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
               {related.map((p) => (
                 <BlogCard key={p.slug} post={p} />
               ))}

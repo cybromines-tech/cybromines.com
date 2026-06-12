@@ -64,7 +64,7 @@ export default function ComponentGallery() {
         </Block>
 
         <Block title="Feature cards">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             <FeatureCard icon={Boxes} title="Standard card" description="A regular feature card with an icon and description." />
             <FeatureCard icon={Boxes} title="Featured card" description="Featured card with the gradient top border." featured />
             <FeatureCard title="No icon" description="A feature card without an icon." />
@@ -72,7 +72,7 @@ export default function ComponentGallery() {
         </Block>
 
         <Block title="Testimonial">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {testimonials.map((t) => (
               <TestimonialCard key={t.name} testimonial={t} />
             ))}
@@ -86,7 +86,7 @@ export default function ComponentGallery() {
         </Block>
 
         <Block title="Neural beam (signature)">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div className="h-56 overflow-hidden rounded-card border border-border bg-surface">
               <NeuralBeam />
             </div>
@@ -103,7 +103,7 @@ export default function ComponentGallery() {
         </Block>
 
         <Block title="Blog covers">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {["alpha", "beta", "gamma"].map((seed) => (
               <BlogCover key={seed} seed={seed} tag="Sample" className="aspect-[16/10] rounded-xl" />
             ))}

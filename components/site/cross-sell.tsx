@@ -25,7 +25,7 @@ export function CrossSell({
     <section className="border-t border-border py-24 md:py-32">
       <Container>
         <SectionHeading eyebrow={eyebrow} title={title} align="left" />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => {
             const Icon = item.icon;
             return (

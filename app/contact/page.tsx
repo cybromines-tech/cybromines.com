@@ -69,7 +69,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-12 pb-24 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="mt-16 grid grid-cols-1 gap-12 pb-24 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           {/* Left — info */}
           <div className="flex flex-col gap-4">
             {infoCards.map((card) => (

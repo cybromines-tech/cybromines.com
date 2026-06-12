@@ -16,7 +16,7 @@ export function AiConsoleBand() {
   return (
     <section className="border-y border-border bg-surface/30 py-24 md:py-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <span className="eyebrow inline-flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-accent-gradient" aria-hidden />
@@ -31,7 +31,7 @@ export function AiConsoleBand() {
               judgement is needed, and logs every action.
             </p>
 
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {capabilities.map((cap) => (
                 <li key={cap.title} className="flex gap-3">
                   <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-cyan">

@@ -31,7 +31,7 @@ export function Hero() {
       />
 
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
           {/* Copy */}
           <m.div variants={container} initial="hidden" animate="show" className="flex flex-col">
             <m.span

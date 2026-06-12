@@ -123,7 +123,7 @@ export default function AiConsultingPage() {
               { name: "AI Consulting", path: "/ai-consulting" },
             ]}
           />
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
                 <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
@@ -168,7 +168,7 @@ export default function AiConsultingPage() {
             title="An AI partner, not just an advisor"
             subtitle="We don't hand you a slide deck and leave. We assess, integrate, build, and train — then stay to measure and scale."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {whatWeDo.map((item, i) => (
               <Reveal key={item.title} delay={i % 3} as="div">
                 <FeatureCard
@@ -205,7 +205,7 @@ export default function AiConsultingPage() {
               everything.
             </p>
           </div>
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {toolGroups.map((g, i) => (
               <Reveal key={g.group} delay={i} as="div">
                 <div className="surface-card h-full p-6">
@@ -237,7 +237,7 @@ export default function AiConsultingPage() {
             title="Use cases across every function"
             subtitle="A starting menu of where AI delivers fast — we tailor the exact mix to your business."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {useCases.map((uc, i) => (
               <Reveal key={uc.dept} delay={i % 3} as="div">
                 <div className="surface-card h-full p-6">

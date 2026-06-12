@@ -104,14 +104,14 @@ export function MobileAppShowcase({
   return (
     <section className="py-24 md:py-32">
       <Container>
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <Reveal className="order-2 lg:order-1">
             <span className="eyebrow">Mobile app — iOS &amp; Android</span>
             <h2 className="mt-4 text-[length:var(--text-section)] font-semibold leading-[1.1] tracking-tight">
               {headline}
             </h2>
             <p className="mt-4 max-w-lg text-base text-muted md:text-lg">{subline}</p>
-            <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {capabilities.map((cap) => (
                 <li key={cap.title} className="flex flex-col gap-1">
                   <span className="flex items-center gap-2 text-sm font-medium text-foreground">

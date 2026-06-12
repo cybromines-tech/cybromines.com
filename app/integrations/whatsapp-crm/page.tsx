@@ -110,7 +110,7 @@ export default function WhatsAppCRMPage() {
               { name: "WhatsApp CRM", path: "/integrations/whatsapp-crm" },
             ]}
           />
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
                 <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-[#25D366]">
@@ -153,7 +153,7 @@ export default function WhatsAppCRMPage() {
             title="Everything you need to sell on WhatsApp"
             subtitle="From the first message to a closed deal, every step lives in one connected system."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i % 3} as="div">
                 <FeatureCard
@@ -176,7 +176,7 @@ export default function WhatsAppCRMPage() {
             title="One conversation, your whole system behind it"
             subtitle="Because WhatsApp CRM runs on the same platform as your ERP, agents answer with real data — not guesses."
           />
-          <div className="mt-14 grid gap-3 md:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-3 md:grid-cols-4">
             {erpFlow.map((step, i) => (
               <Reveal key={step.label} delay={i} as="div">
                 <div className="relative flex h-full flex-col gap-3 rounded-card border border-border bg-surface p-6">
@@ -199,7 +199,7 @@ export default function WhatsAppCRMPage() {
       {/* FAQ */}
       <section className="py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading eyebrow="FAQ" title="Common questions" align="left" />
             <FAQAccordion items={whatsappFaqs} />
           </div>

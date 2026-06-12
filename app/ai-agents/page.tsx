@@ -176,7 +176,7 @@ export default function AIAgentsPage() {
             title="Whole tasks, not just suggestions"
             subtitle="Each capability is a job an agent can own end to end, escalating to your team only when it should."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((cap, i) => (
               <Reveal key={cap.title} delay={i % 3} as="div">
                 <FeatureCard
@@ -199,7 +199,7 @@ export default function AIAgentsPage() {
             title="The same intelligence, inside every system"
             subtitle="Wherever your work happens, an agent is already there. Here's a taste of what AI does inside each system we build."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((sol, i) => {
               const Icon = sol.icon;
               return (
@@ -245,7 +245,7 @@ export default function AIAgentsPage() {
       {/* Use cases by department + visual */}
       <section className="border-y border-border bg-surface/30 py-24 md:py-32">
         <Container>
-          <div className="grid items-center gap-14 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow">By department</span>
               <h2 className="mt-4 text-[length:var(--text-section)] font-semibold leading-[1.1] tracking-tight">
@@ -256,7 +256,7 @@ export default function AIAgentsPage() {
                 across every department — so your people focus on the decisions
                 that need them.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {useCases.map((uc) => (
                   <div key={uc.dept} className="rounded-xl border border-border bg-surface p-5">
                     <p className="font-mono text-xs uppercase tracking-widest text-cyan">
@@ -292,7 +292,7 @@ export default function AIAgentsPage() {
             title="Autonomy you can actually govern"
             subtitle="Agents only earn more responsibility once you trust them. The controls are built in from day one."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {security.map((item, i) => (
               <Reveal key={item.title} delay={i} as="div">
                 <div className="surface-card h-full p-7">

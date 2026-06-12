@@ -15,7 +15,7 @@ export function ServicesRow() {
           subtitle="When you need something built, found, or shipped, our team works as an extension of yours."
         />
 
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (

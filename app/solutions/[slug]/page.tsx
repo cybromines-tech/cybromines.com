@@ -82,7 +82,7 @@ export default async function SolutionPage({
               { name: sol.name, path: `/solutions/${sol.slug}` },
             ]}
           />
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
                 <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
@@ -128,7 +128,7 @@ export default async function SolutionPage({
             title={`What ${sol.name} gives you`}
             subtitle={`Purpose-built for how ${sol.shortName.toLowerCase()} actually runs in a real business.`}
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
             {sol.features.map((f, i) => (
               <Reveal key={f.title} delay={i % 2} as="div">
                 <FeatureCard title={f.title} description={f.description} featured={i === 0} />
@@ -141,7 +141,7 @@ export default async function SolutionPage({
       {/* AI inside this system */}
       <section className="border-y border-border bg-surface/30 py-24 md:py-32">
         <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <AiBadge label="AI inside" />
               <h2 className="mt-4 text-[length:var(--text-section)] font-semibold leading-[1.1] tracking-tight">
@@ -181,7 +181,7 @@ export default async function SolutionPage({
               title="Five modules, one ledger"
               subtitle="Start with one module and expand — they all share the same data and login."
             />
-            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {modules.map((m, i) => {
                 const MIcon = m.icon;
                 return (

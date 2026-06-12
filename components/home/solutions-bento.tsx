@@ -29,8 +29,10 @@ function SolutionCard({ solution }: { solution: Solution }) {
       </div>
       <p className="mt-2 flex-1 text-[14px] leading-relaxed text-muted">{solution.tagline}</p>
       <div className="mt-4 flex items-center gap-2 border-t border-border pt-3.5">
-        <AiBadge />
-        <span className="truncate text-[12px] text-muted-subtle">{solution.aiHook}</span>
+        <AiBadge className="shrink-0" />
+        <span className="min-w-0 flex-1 truncate text-[12px] text-muted-subtle">
+          {solution.aiHook}
+        </span>
       </div>
     </Link>
   );
@@ -92,7 +94,7 @@ export function SolutionsBento() {
           subtitle="Stop stitching together a dozen vendors. Cybromines builds and integrates the systems your business runs on — each one AI-native from day one."
         />
 
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Reveal as="div" className="md:col-span-2">
             <FlagshipCard solution={flagship} />
           </Reveal>

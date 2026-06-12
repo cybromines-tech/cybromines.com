@@ -101,7 +101,7 @@ export default function FacebookAdsPage() {
             title="Connect the ad to the outcome"
             subtitle="Close the loop between what you spend on Meta and the revenue it produces."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
             {features.map((f, i) => (
               <Reveal key={f.title} delay={i % 2} as="div">
                 <FeatureCard
@@ -124,7 +124,7 @@ export default function FacebookAdsPage() {
             title="From ad to answered, in seconds"
             subtitle="Speed wins leads. This is the path every prospect takes the moment they tap your ad."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-4">
             {flow.map((step, i) => (
               <Reveal key={step.title} delay={i} as="div">
                 <div className="surface-card relative flex h-full flex-col gap-3 p-6">
@@ -164,7 +164,7 @@ export default function FacebookAdsPage() {
       {/* FAQ */}
       <section className="py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading eyebrow="FAQ" title="Common questions" align="left" />
             <FAQAccordion items={facebookFaqs} />
           </div>

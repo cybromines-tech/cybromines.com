@@ -119,7 +119,7 @@ export function ContactForm() {
         <input id="website" type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Name" error={errors.name?.message} htmlFor="name">
           <Input id="name" placeholder="Your full name" {...register("name")} />
         </Field>
@@ -128,7 +128,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field label="Work email" error={errors.email?.message} htmlFor="email">
           <Input id="email" type="email" placeholder="you@company.com" {...register("email")} />
         </Field>

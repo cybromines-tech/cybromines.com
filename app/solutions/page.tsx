@@ -63,7 +63,7 @@ export default function SolutionsPage() {
             title="Pick what you need. Add the rest when you're ready."
             subtitle="Each system stands on its own and integrates with the rest — start anywhere and grow into the full platform."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((sol, i) => {
               const Icon = sol.icon;
               return (
@@ -105,7 +105,7 @@ export default function SolutionsPage() {
             eyebrow="Why one platform"
             title="The advantage isn't the systems. It's that they're one."
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {why.map((item, i) => (
               <Reveal key={item.title} delay={i} as="div">
                 <div className="surface-card h-full p-7">

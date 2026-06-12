@@ -93,7 +93,7 @@ export default async function ModulePage({
             title={`Everything ${mod.name} gives your team`}
             subtitle={`Purpose-built for how ${mod.name.toLowerCase()} actually runs in a mid-to-large enterprise.`}
           />
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {mod.features.map((feature, i) => (
               <Reveal key={feature.title} delay={i % 3} as="div">
                 <FeatureCard
@@ -117,7 +117,7 @@ export default async function ModulePage({
       {/* Mini FAQ */}
       <section className="border-t border-border py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading
               eyebrow="FAQ"
               title={`${mod.name}, answered`}
