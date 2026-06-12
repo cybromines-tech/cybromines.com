@@ -1,0 +1,77 @@
+---
+title: "5 business processes you should hand to an AI agent in 2026"
+description: "Not every task is worth automating. These five are: high-volume, rule-heavy, and draining your best people. Here's how to hand each one to an AI agent."
+date: "2026-06-10"
+tags: ["AI", "Automation", "Operations"]
+cover: "/blog/ai-agents-2026.png"
+author:
+  name: "Omar Haddad"
+  role: "Solutions Architect, Cybromines"
+draft: false
+---
+
+There's a lot of noise about AI agents right now, and most of it is unhelpful. The useful question isn't "what *can* an agent do?" — it's "what *should* you hand to one first?"
+
+The answer is consistent across the businesses we work with. The best first candidates share three traits: they're **high-volume**, **rule-heavy**, and they **burn out your most capable people** doing work beneath their pay grade. Here are five that fit, and how to think about each.
+
+## 1. Supplier invoice processing
+
+This is almost always the highest-ROI place to start. The work is brutally repetitive: open the invoice, read the line items, match them to a purchase order, check the totals, post for approval. A skilled finance person can do hundreds a week — and hate every minute.
+
+An [agent](/ai-agents) reads the document, extracts the fields, matches against the PO in your [Finance module](/products/finance), flags discrepancies, and posts the rest for approval. Your team stops keying and starts reviewing exceptions.
+
+<Callout type="tip" title="Start where the volume is">
+Pick the process with the most repetitions per week. Volume is what turns a small per-task saving into a transformed P&L.
+</Callout>
+
+## 2. Lead qualification and follow-up
+
+Speed is the single biggest predictor of conversion, and humans are bad at it — not because they're lazy, but because they're asleep, in meetings, or already on another call.
+
+An agent never is. The moment a lead arrives — from a [Facebook ad](/integrations/facebook-ads), a form, or a [WhatsApp message](/integrations/whatsapp-crm) — it can respond, qualify, and book a meeting, then hand a warm, contextualised lead to a salesperson. The rep walks into every conversation already knowing what the prospect needs.
+
+## 3. Customer support triage
+
+Most support tickets are not hard. They're "where's my order," "how do I reset this," and "what are your hours." The hard ones — the genuinely frustrated customer, the complex edge case — are where your team's empathy and judgement actually matter.
+
+An agent triages the queue: it answers the routine questions directly, and for everything else it classifies, prioritises, and routes the ticket to the right person *with the context already gathered*. Your specialists spend their day on problems worth their skill.
+
+## 4. Recurring report generation
+
+Every operations team has someone who spends Friday afternoon assembling the same reports from the same systems. It's predictable, structured, and a complete waste of a capable person's week.
+
+This is ideal agent work. Define the report once, and the agent produces it on schedule — pulling from your ERP, formatting it, and delivering it to the right inbox. Conceptually, you're describing a job:
+
+```yaml
+agent: weekly-ops-report
+schedule: "Mon 08:00 Asia/Dubai"
+sources:
+  - module: trading      # sales & margin
+  - module: inventory    # stock position
+  - module: finance      # cash & receivables
+output:
+  format: pdf
+  deliver_to: ["ops@yourcompany.com"]
+  on_anomaly: notify(role="ops-manager")
+```
+
+The agent does on Monday at 8am what a person used to lose Friday afternoon to — and it never forgets.
+
+## 5. Anomaly detection in transactions
+
+This one is different: it's not about saving time, it's about catching what humans miss. Duplicate payments, a margin that quietly collapsed on one product line, an unusual refund pattern — these hide in volume that no person can watch in full.
+
+An agent can. It monitors the transaction stream continuously and surfaces the handful of things that genuinely need a human look, with the evidence attached. You find the problem while it's still small.
+
+## How to actually start
+
+The mistake is trying to automate everything at once. Don't. Instead:
+
+1. **Pick one process** from this list — ideally invoice processing or lead follow-up.
+2. **Keep a human in the loop** at first. Let the agent draft and a person approve, until trust is earned.
+3. **Measure hours saved**, not vanity metrics. The number that matters is your team's time back.
+4. **Expand scope gradually.** As the agent proves itself, widen what it owns and tighten what needs sign-off.
+
+The businesses winning with AI in 2026 aren't the ones with the flashiest demos. They're the ones who picked one painful, high-volume process, handed it to an agent, and then did it again.
+
+Tell us your most repetitive process and we'll show you the agent that can run it — [book a demo](/contact).

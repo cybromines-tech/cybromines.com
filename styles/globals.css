@@ -1,0 +1,414 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* next-themes uses class strategy: html.dark / html.light. Dark is the default. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — dark is the base (:root); .light overrides          */
+/* ------------------------------------------------------------------ */
+:root {
+  --background: #09090b;
+  --surface: #101014;
+  --surface-elevated: #16161c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --foreground: #fafafa;
+  --muted: #a1a1aa;
+  --muted-subtle: #71717a;
+  --accent-violet: #7c3aed;
+  --accent-cyan: #22d3ee;
+  --success: #34d399;
+
+  /* derived helpers */
+  --ring: var(--accent-cyan);
+  --beam-dot: rgba(255, 255, 255, 0.14);
+  --beam-line: rgba(255, 255, 255, 0.05);
+  --glow-violet: rgba(124, 58, 237, 0.18);
+  --glow-cyan: rgba(34, 211, 238, 0.14);
+  --selection: rgba(124, 58, 237, 0.35);
+  --shadow-card: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+    0 24px 48px -24px rgba(0, 0, 0, 0.7);
+}
+
+.light {
+  --background: #fbfbfd;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --border: rgba(9, 9, 11, 0.09);
+  --border-strong: rgba(9, 9, 11, 0.16);
+  --foreground: #0b0b0f;
+  --muted: #52525b;
+  --muted-subtle: #71717a;
+  --accent-violet: #6d28d9;
+  --accent-cyan: #0891b2;
+  --success: #059669;
+
+  --ring: var(--accent-violet);
+  --beam-dot: rgba(9, 9, 11, 0.16);
+  --beam-line: rgba(9, 9, 11, 0.06);
+  --glow-violet: rgba(124, 58, 237, 0.1);
+  --glow-cyan: rgba(34, 211, 238, 0.1);
+  --selection: rgba(124, 58, 237, 0.2);
+  --shadow-card: 0 1px 2px 0 rgba(9, 9, 11, 0.04),
+    0 20px 40px -28px rgba(9, 9, 11, 0.22);
+}
+
+/* ------------------------------------------------------------------ */
+/* Map tokens to Tailwind utilities (inline = follows the CSS var)     */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-subtle: var(--muted-subtle);
+  --color-violet: var(--accent-violet);
+  --color-cyan: var(--accent-cyan);
+  --color-success: var(--success);
+  --color-ring: var(--ring);
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-card: 16px;
+  --radius-btn: 10px;
+
+  --text-hero: clamp(2.75rem, 6vw, 4.5rem);
+  --text-section: clamp(2rem, 4vw, 3rem);
+
+  --max-width-7xl: 80rem;
+  --max-width-prose: 48rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base layer                                                          */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: var(--foreground);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Visible, branded focus rings */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Hide focus ring for mouse, show for keyboard already handled by :focus-visible */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                           */
+/* ------------------------------------------------------------------ */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .bg-accent-gradient {
+    background-image: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  }
+
+  .border-gradient-top {
+    position: relative;
+  }
+  .border-gradient-top::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-violet), var(--accent-cyan), transparent);
+    opacity: 0.7;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+
+  /* Subtle dotted texture for section atmosphere */
+  .bg-grid {
+    background-image: radial-gradient(var(--beam-dot) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -14px -14px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 80px -20px var(--glow-violet);
+  }
+
+  .surface-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+  }
+
+  .container-page {
+    width: 100%;
+    max-width: var(--max-width-7xl);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Signature: neural-beam keyframes + logo marquee                     */
+/* ------------------------------------------------------------------ */
+@keyframes beam-dash {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+
+@keyframes beam-pulse {
+  0%, 100% {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+}
+
+@keyframes node-glow {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* AI core: data flowing inward along beams + the core breathing */
+@keyframes core-flow {
+  from {
+    stroke-dashoffset: 63;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes core-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.16);
+    opacity: 0.6;
+  }
+}
+
+/* AI console: blinking cursor */
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Shimmer for AI badges / gradient text sweeps */
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-paused:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+.animate-accordion-down {
+  animation: accordion-down 0.25s ease-out;
+}
+.animate-accordion-up {
+  animation: accordion-up 0.25s ease-out;
+}
+
+/* ------------------------------------------------------------------ */
+/* Prose (blog) theming on top of @tailwindcss/typography              */
+/* ------------------------------------------------------------------ */
+.prose-cybromines {
+  --tw-prose-body: var(--muted);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--muted);
+  --tw-prose-links: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--muted-subtle);
+  --tw-prose-bullets: var(--border-strong);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--accent-violet);
+  --tw-prose-captions: var(--muted-subtle);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: #e4e4e7;
+  --tw-prose-pre-bg: var(--surface);
+  --tw-prose-th-borders: var(--border-strong);
+  --tw-prose-td-borders: var(--border);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.prose-cybromines a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-strong);
+  transition: border-color 0.2s;
+}
+.prose-cybromines a:hover {
+  border-color: var(--accent-cyan);
+}
+.prose-cybromines h2 {
+  scroll-margin-top: 6rem;
+  margin-top: 2.75em;
+  letter-spacing: -0.02em;
+}
+.prose-cybromines h3 {
+  scroll-margin-top: 6rem;
+}
+.prose-cybromines :where(code):not(pre code) {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.prose-cybromines pre {
+  /* Shiki github-dark tokens need a dark surface in both site themes. */
+  background: #0d1117 !important;
+  color: #e6edf3;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  font-size: 0.875rem;
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+}
+.prose-cybromines pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+}
+.prose-cybromines figure[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+}
+.prose-cybromines [data-rehype-pretty-code-title] {
+  border: 1px solid var(--border-strong);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: #161b22;
+  color: #e6edf3;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.prose-cybromines [data-rehype-pretty-code-title] + pre {
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+}
+/* rehype-pretty-code line numbers / highlights */
+.prose-cybromines [data-line] {
+  padding: 0 0.1rem;
+}
+.prose-cybromines [data-highlighted-line] {
+  background: rgba(124, 58, 237, 0.12);
+  border-left: 2px solid var(--accent-violet);
+  margin-left: -1.25rem;
+  padding-left: calc(1.25rem - 2px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion                                                      */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
