@@ -1,9 +1,22 @@
 "use client";
 
 import * as React from "react";
-import { useReducedMotion } from "motion/react";
 import { Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/** Lightweight prefers-reduced-motion hook (replaces Framer's useReducedMotion). */
+function useReducedMotion() {
+  const [reduced, setReduced] = React.useState(false);
+  React.useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setReduced(mq.matches);
+    const onChange = () => setReduced(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+  return reduced;
+}
 
 interface Command {
   sys: string;

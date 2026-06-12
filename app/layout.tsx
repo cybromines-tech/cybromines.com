@@ -3,7 +3,6 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "../styles/globals.css";
 
 import { ThemeProvider } from "@/components/site/theme-provider";
-import { MotionProvider } from "@/components/site/motion-provider";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { WhatsAppFloatButton } from "@/components/site/whatsapp-float-button";
@@ -71,6 +70,13 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-dvh bg-background text-foreground antialiased">
+        {/* Mark JS as available before paint so CSS scroll-reveals only hide
+            content when they can actually be revealed (no blank sections). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -84,12 +90,10 @@ export default function RootLayout({
           >
             Skip to content
           </a>
-          <MotionProvider>
-            <Navbar />
-            <main id="main-content">{children}</main>
-            <Footer />
-            <WhatsAppFloatButton />
-          </MotionProvider>
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <WhatsAppFloatButton />
           <Analytics />
         </ThemeProvider>
       </body>
