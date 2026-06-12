@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap && node scripts/generate-rss.mjs",
+    "prebuild": "node scripts/generate-rss.mjs",
+    "build": "next build",
     "start": "npx serve out",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -47,7 +48,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
-    "next-sitemap": "^4.2.3",
     "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",

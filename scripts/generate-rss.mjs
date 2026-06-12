@@ -6,7 +6,9 @@ import matter from "gray-matter";
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://cybromines.com").replace(/\/$/, "");
 const SITE_NAME = "Cybromines";
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
-const OUT_DIR = path.join(process.cwd(), "out");
+// Write into public/ as a prebuild step so `next build` bundles it into the
+// static export (served natively by Vercel and any static host).
+const OUT_DIR = path.join(process.cwd(), "public");
 
 function escapeXml(str = "") {
   return str
@@ -64,4 +66,4 @@ ${items}
 const posts = getPosts();
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, "rss.xml"), buildRss(posts));
-console.log(`✓ rss.xml generated with ${posts.length} posts`);
+console.log(`✓ public/rss.xml generated with ${posts.length} posts`);
