@@ -7,6 +7,7 @@ import { Hero } from "@/components/home/hero";
 import { LogoMarquee } from "@/components/site/logo-marquee";
 import { SolutionsBento } from "@/components/home/solutions-bento";
 import { AiConsoleBand } from "@/components/home/ai-console-band";
+import { AiConsultingBand } from "@/components/home/ai-consulting-band";
 import { IntegrationsDuo } from "@/components/home/integrations-duo";
 import { ServicesRow } from "@/components/home/services-row";
 import { ProcessTimeline } from "@/components/site/process-timeline";
@@ -38,6 +39,7 @@ export default function Home() {
       <LogoMarquee />
       <SolutionsBento />
       <AiConsoleBand />
+      <AiConsultingBand />
       <IntegrationsDuo />
       <ServicesRow />
       <ProcessTimeline

@@ -1,6 +1,6 @@
 import { solutions } from "./solutions";
 import { services } from "./services";
-import { MessageCircle, Megaphone, Bot, Workflow, type LucideIcon } from "lucide-react";
+import { MessageCircle, Megaphone, Bot, Sparkles, type LucideIcon } from "lucide-react";
 
 export interface NavChild {
   label: string;
@@ -32,10 +32,10 @@ export const aiNavChildren: NavChild[] = [
     icon: Bot,
   },
   {
-    label: "AI in every system",
-    href: "/ai-agents#everywhere",
-    description: "Intelligence built into every product we ship.",
-    icon: Workflow,
+    label: "AI Consulting",
+    href: "/ai-consulting",
+    description: "We help your company adopt and use AI.",
+    icon: Sparkles,
   },
 ];
 
@@ -81,6 +81,7 @@ export const footerNav = {
   ],
   Capabilities: [
     { label: "AI Agents", href: "/ai-agents" },
+    { label: "AI Consulting", href: "/ai-consulting" },
     { label: "WhatsApp CRM", href: "/integrations/whatsapp-crm" },
     { label: "Facebook Ads", href: "/integrations/facebook-ads" },
     { label: "Custom software", href: "/services/custom-software" },
