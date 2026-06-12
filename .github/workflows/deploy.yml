@@ -1,8 +1,9 @@
 name: Deploy to Vercel (production)
 
 # Reliable push-to-deploy that does NOT depend on the Vercel GitHub App webhook
-# (which has been intermittently missing pushes). Builds and deploys via the
-# Vercel CLI on every push to main.
+# (which has been intermittently missing pushes). Uploads the source and builds
+# in Vercel's cloud (the same path the dashboard/CLI deploys use), on every push
+# to main.
 #
 # One-time setup: add a repo secret `VERCEL_TOKEN`
 #   1. Vercel → Account Settings → Tokens → create a token (scope: the team).
@@ -43,32 +44,18 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        if: steps.guard.outputs.run == 'true'
-        uses: pnpm/action-setup@v4
-        with:
-          version: 11
-
       - name: Setup Node
         if: steps.guard.outputs.run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
       - name: Install Vercel CLI
         if: steps.guard.outputs.run == 'true'
-        # Use npm for the global CLI (its global bin is on PATH; pnpm -g is not).
         run: npm i -g vercel@latest
 
-      - name: Pull Vercel project settings & env
-        if: steps.guard.outputs.run == 'true'
-        run: vercel pull --yes --environment=production
-
-      - name: Build
-        if: steps.guard.outputs.run == 'true'
-        run: vercel build --prod
-
+      # Upload source and build in Vercel's cloud (handles the pnpm/sharp
+      # build-scripts approval that the GitHub runner's pnpm rejects).
       - name: Deploy to production
         if: steps.guard.outputs.run == 'true'
-        run: vercel deploy --prebuilt --prod
+        run: vercel deploy --prod --yes
