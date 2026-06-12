@@ -1,0 +1,73 @@
+name: Deploy to Vercel (production)
+
+# Reliable push-to-deploy that does NOT depend on the Vercel GitHub App webhook
+# (which has been intermittently missing pushes). Builds and deploys via the
+# Vercel CLI on every push to main.
+#
+# One-time setup: add a repo secret `VERCEL_TOKEN`
+#   1. Vercel → Account Settings → Tokens → create a token (scope: the team).
+#   2. GitHub → this repo → Settings → Secrets and variables → Actions →
+#      New repository secret → name VERCEL_TOKEN, value = the token.
+# Until the secret is set, this workflow no-ops cleanly (no failed runs).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: true
+
+env:
+  VERCEL_ORG_ID: team_mIVbqOg8gPUJm0ymN7LmyJKb
+  VERCEL_PROJECT_ID: prj_uFVwrD1XoBuNryo2zLVffYi5Wuz6
+  # The Vercel CLI reads VERCEL_TOKEN from the environment automatically.
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for VERCEL_TOKEN
+        id: guard
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::notice::VERCEL_TOKEN not set — skipping deploy. Add it in repo Settings → Secrets → Actions."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        if: steps.guard.outputs.run == 'true'
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Setup Node
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install Vercel CLI
+        if: steps.guard.outputs.run == 'true'
+        run: pnpm add -g vercel@latest
+
+      - name: Pull Vercel project settings & env
+        if: steps.guard.outputs.run == 'true'
+        run: vercel pull --yes --environment=production
+
+      - name: Build
+        if: steps.guard.outputs.run == 'true'
+        run: vercel build --prod
+
+      - name: Deploy to production
+        if: steps.guard.outputs.run == 'true'
+        run: vercel deploy --prebuilt --prod
