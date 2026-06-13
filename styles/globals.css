@@ -278,6 +278,37 @@
 }
 
 /* ------------------------------------------------------------------ */
+/* Mobile menu — pure CSS toggle (a native checkbox), so it opens      */
+/* INSTANTLY on tap without waiting for any JavaScript to hydrate.     */
+/* ------------------------------------------------------------------ */
+.cyb-menu-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.cyb-menu-panel {
+  transform: translateX(100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+#cyb-menu:checked ~ .cyb-menu-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+#cyb-menu:checked ~ .cyb-menu-panel {
+  transform: translateX(0);
+}
+/* lock background scroll while the menu is open */
+body:has(#cyb-menu:checked) {
+  overflow: hidden;
+}
+/* keyboard focus ring on the hamburger when the (hidden) checkbox is focused */
+#cyb-menu:focus-visible ~ .cyb-menu-trigger {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
 /* Scroll reveal — CSS-driven (replaces Framer Motion).               */
 /* Progressive enhancement: content is visible by default and only    */
 /* hidden once JS is confirmed (html.js), so it never stays blank.    */
