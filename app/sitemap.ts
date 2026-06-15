@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/solutions",
     "/ai-agents",
     "/ai-consulting",
+    "/email-agent",
     "/integrations/whatsapp-crm",
     "/integrations/facebook-ads",
     "/services",
