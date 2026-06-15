@@ -28,6 +28,29 @@ export const siteConfig = {
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "971500000000",
   contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "",
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+  // Search-engine ownership verification (set per provider in env).
+  googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
+  bingSiteVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? "",
+  // E-E-A-T signals used in structured data — edit to your real values.
+  foundingYear: "2021",
+  /** Primary language(s) the business operates in. */
+  availableLanguages: ["en", "ar"],
+  /** Markets served — used in Service/Organization schema (international). */
+  areaServed: ["AE", "SA", "QA", "KW", "OM", "BH", "IN", "GB", "US"],
+  /** Topics the company is an authority on (schema knowsAbout). */
+  knowsAbout: [
+    "Enterprise Resource Planning",
+    "Customer Relationship Management",
+    "Point of Sale systems",
+    "Inventory Management",
+    "Production Management",
+    "Property Management",
+    "Queue Management",
+    "AI agents",
+    "Business process automation",
+    "WhatsApp Business API",
+    "Custom software development",
+  ],
   social: {
     linkedin: "https://www.linkedin.com/company/cybromines",
     x: "https://x.com/cybromines",
@@ -40,9 +63,21 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
+/** Absolute URL for an ASSET (file with extension, e.g. /icon.svg) — no trailing slash. */
 export function absoluteUrl(path = "") {
   const clean = path.startsWith("/") ? path : `/${path}`;
   return `${siteConfig.url}${clean === "/" ? "" : clean}`;
+}
+
+/**
+ * Canonical URL for a PAGE route. trailingSlash is on, so pages resolve at
+ * `/path/` — canonical, OG url, and JSON-LD page references must match exactly
+ * to avoid duplicate-content signals.
+ */
+export function pageUrl(path = "/") {
+  if (!path || path === "/") return `${siteConfig.url}/`;
+  const clean = (path.startsWith("/") ? path : `/${path}`).replace(/\/+$/, "");
+  return `${siteConfig.url}${clean}/`;
 }
 
 export function whatsappLink(message?: string) {

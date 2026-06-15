@@ -1,22 +1,59 @@
-import { siteConfig, absoluteUrl } from "@/lib/site";
+import { siteConfig, absoluteUrl, pageUrl } from "@/lib/site";
 
-/** Sitewide Organization schema. */
+const ORG_ID = `${siteConfig.url}/#organization`;
+const WEBSITE_ID = `${siteConfig.url}/#website`;
+
+/** Reusable reference to the Organization node (so schemas link, not duplicate). */
+const orgRef = { "@id": ORG_ID };
+
+/** Sitewide Organization schema (rich, with contact points and authority signals). */
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
-    url: siteConfig.url,
-    logo: absoluteUrl("/icon.svg"),
+    url: pageUrl("/"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/icon.svg"),
+      width: 512,
+      height: 512,
+    },
+    image: absoluteUrl(siteConfig.ogImage),
     description: siteConfig.description,
+    slogan: siteConfig.tagline,
     email: siteConfig.email,
+    telephone: siteConfig.phone,
+    foundingDate: siteConfig.foundingYear,
+    knowsAbout: [...siteConfig.knowsAbout],
     address: {
       "@type": "PostalAddress",
       streetAddress: `${siteConfig.address.line1}, ${siteConfig.address.line2}`,
       addressLocality: siteConfig.address.city,
       addressCountry: "AE",
     },
+    areaServed: siteConfig.areaServed.map((c) => ({
+      "@type": "Country",
+      identifier: c,
+    })),
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: siteConfig.salesEmail,
+        telephone: siteConfig.phone,
+        areaServed: [...siteConfig.areaServed],
+        availableLanguage: [...siteConfig.availableLanguages],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: siteConfig.email,
+        availableLanguage: [...siteConfig.availableLanguages],
+      },
+    ],
     sameAs: [
       siteConfig.social.linkedin,
       siteConfig.social.x,
@@ -26,13 +63,17 @@ export function organizationSchema() {
   };
 }
 
-/** WebSite schema with a SearchAction (home page). */
+/** WebSite schema with a SearchAction (sitewide). */
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": WEBSITE_ID,
     name: siteConfig.name,
-    url: siteConfig.url,
+    url: pageUrl("/"),
+    description: siteConfig.description,
+    inLanguage: "en",
+    publisher: orgRef,
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -54,16 +95,18 @@ export function softwareApplicationSchema(input: {
     "@type": "SoftwareApplication",
     name: input.name,
     description: input.description,
-    url: absoluteUrl(input.path),
+    url: pageUrl(input.path),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, iOS, Android",
+    inLanguage: "en",
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
       price: "0",
       description: "Custom enterprise pricing — request a demo.",
     },
-    provider: { "@type": "Organization", name: siteConfig.name },
+    provider: orgRef,
+    publisher: orgRef,
   };
 }
 
@@ -78,9 +121,16 @@ export function serviceSchema(input: {
     serviceType: input.name,
     name: input.name,
     description: input.description,
-    url: absoluteUrl(input.path),
-    provider: { "@type": "Organization", name: siteConfig.name },
-    areaServed: ["AE", "SA", "QA", "KW", "OM", "BH"],
+    url: pageUrl(input.path),
+    provider: orgRef,
+    areaServed: siteConfig.areaServed.map((c) => ({
+      "@type": "Country",
+      identifier: c,
+    })),
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: pageUrl(input.path),
+    },
   };
 }
 
@@ -104,7 +154,7 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: absoluteUrl(item.path),
+      item: pageUrl(item.path),
     })),
   };
 }
@@ -114,26 +164,40 @@ export function blogPostingSchema(input: {
   description: string;
   path: string;
   date: string;
+  modified?: string;
   cover: string;
   author: string;
+  authorRole?: string;
+  tags?: string[];
+  wordCount?: number;
 }) {
+  const url = pageUrl(input.path);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: input.title,
     description: input.description,
-    url: absoluteUrl(input.path),
+    url,
     datePublished: input.date,
-    dateModified: input.date,
-    image: input.cover.startsWith("http")
-      ? input.cover
-      : absoluteUrl(input.cover),
-    author: { "@type": "Organization", name: input.author },
+    dateModified: input.modified ?? input.date,
+    inLanguage: "en",
+    image: input.cover.startsWith("http") ? input.cover : absoluteUrl(input.cover),
+    author: {
+      "@type": "Person",
+      name: input.author,
+      ...(input.authorRole ? { jobTitle: input.authorRole } : {}),
+    },
     publisher: {
       "@type": "Organization",
+      "@id": ORG_ID,
       name: siteConfig.name,
       logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(input.path) },
+    ...(input.tags && input.tags.length
+      ? { keywords: input.tags.join(", "), articleSection: input.tags[0] }
+      : {}),
+    ...(input.wordCount ? { wordCount: input.wordCount } : {}),
+    isPartOf: { "@id": WEBSITE_ID },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 }

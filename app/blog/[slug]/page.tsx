@@ -44,8 +44,16 @@ export async function generateMetadata({
     path: `/blog/${post.slug}`,
     type: "article",
     publishedTime: post.date,
-    // Per-post OG falls back to the default brand image (covers are CSS-built).
+    modifiedTime: post.date,
+    authorName: post.author.name,
+    section: post.tags[0],
+    tags: post.tags,
+    // The per-post OG image is generated at build by the route's opengraph-image.
   });
+}
+
+function wordCount(text: string) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
 export default async function BlogPostPage({
@@ -76,6 +84,9 @@ export default async function BlogPostPage({
           date: post.date,
           cover: `/blog/${post.slug}/opengraph-image`,
           author: post.author.name,
+          authorRole: post.author.role,
+          tags: post.tags,
+          wordCount: wordCount(post.content),
         })}
       />
 

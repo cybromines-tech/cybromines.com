@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { JsonLd } from "@/components/site/json-ld";
-import { websiteSchema } from "@/lib/seo/jsonld";
 
 import { Hero } from "@/components/home/hero";
 import { LogoMarquee } from "@/components/site/logo-marquee";
@@ -17,7 +15,8 @@ import { BlogPreview } from "@/components/home/blog-preview";
 import { CTABand } from "@/components/site/cta-band";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Cybromines — One AI-native partner for every business system",
+  title: "Cybromines — AI-Native ERP, CRM & POS Software House",
+  titleAbsolute: true,
   description:
     "Cybromines is an AI-native software house. We build and integrate ERP, CRM, POS, inventory, production, property, and queue systems — powered by AI agents.",
   path: "/",
@@ -34,7 +33,6 @@ const deliverySteps = [
 export default function Home() {
   return (
     <>
-      <JsonLd schema={websiteSchema()} />
       <Hero />
       <LogoMarquee />
       <SolutionsBento />

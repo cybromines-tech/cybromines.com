@@ -1,0 +1,37 @@
+# Cybromines
+
+> Cybromines is an AI-native software house. We design, build, and integrate the
+> systems businesses run on — ERP, CRM, POS, inventory, production, property, and
+> queue management — and put AI agents to work across all of them. Based in Dubai,
+> serving enterprises across the GCC and internationally.
+
+## Solutions
+- [ERP System](https://cybromines.com/solutions/erp/): Trading, inventory, finance, HRM, and POS on one ledger, with GCC compliance.
+- [CRM System](https://cybromines.com/solutions/crm/): Omnichannel pipeline with WhatsApp-native CRM and AI lead handling.
+- [POS System](https://cybromines.com/solutions/pos/): Offline-capable, multi-branch point of sale.
+- [Inventory System](https://cybromines.com/solutions/inventory/): Real-time multi-warehouse stock with AI reordering.
+- [Production System](https://cybromines.com/solutions/production/): BOMs, work orders, and AI scheduling.
+- [Property System](https://cybromines.com/solutions/property/): Units, leases, tenants, and maintenance.
+- [Queue Management](https://cybromines.com/solutions/queue/): Token issuing, routing, displays, and AI wait-time prediction.
+
+## AI
+- [AI Agents](https://cybromines.com/ai-agents/): Autonomous agents that run operations across every system.
+- [AI Consulting](https://cybromines.com/ai-consulting/): We help companies adopt AI by integrating the right tools around real use cases.
+
+## Integrations
+- [WhatsApp CRM](https://cybromines.com/integrations/whatsapp-crm/): WhatsApp Business Cloud API, shared inbox, broadcasts, chatbots.
+- [Facebook Ads](https://cybromines.com/integrations/facebook-ads/): Lead-form sync, Conversions API, and CRM audience sync.
+
+## Services
+- [Custom software development](https://cybromines.com/services/custom-software/)
+- [SEO services](https://cybromines.com/services/seo/)
+- [Mobile apps](https://cybromines.com/services/mobile-apps/)
+
+## Company
+- [About](https://cybromines.com/about/)
+- [Blog](https://cybromines.com/blog/)
+- [Contact](https://cybromines.com/contact/)
+
+## Optional
+- [Sitemap](https://cybromines.com/sitemap.xml)
+- [RSS feed](https://cybromines.com/rss.xml)

@@ -33,7 +33,7 @@ export async function generateMetadata({
   const mod = getModule(module);
   if (!mod) return {};
   return buildMetadata({
-    title: `${mod.name} module — Cybromines ERP`,
+    title: `${mod.name} — ERP Module`,
     description: mod.metaDescription,
     path: `/products/${mod.slug}`,
   });

@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 import { solutions } from "@/lib/data/solutions";
 import { moduleSlugs } from "@/lib/data/modules";
 import { serviceSlugs } from "@/lib/data/services";
-import { getPublishedSlugs } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
 
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const solutionPaths = solutions.map((s) => `/solutions/${s.slug}`);
   const modulePaths = moduleSlugs.map((m) => `/products/${m}`);
   const servicePaths = serviceSlugs.map((s) => `/services/${s}`);
-  const blogPaths = getPublishedSlugs().map((slug) => `/blog/${slug}`);
+  const posts = getAllPosts();
 
   const entries: MetadataRoute.Sitemap = [
     ...staticPaths.map((p) => ({
@@ -61,9 +61,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
-    ...blogPaths.map((p) => ({
-      url: url(p),
-      lastModified: now,
+    ...posts.map((post) => ({
+      url: url(`/blog/${post.slug}`),
+      lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
