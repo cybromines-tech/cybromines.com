@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import { buildMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/site";
 import { softwareApplicationSchema, faqSchema } from "@/lib/seo/jsonld";
 import { JsonLd } from "@/components/site/json-ld";
 import { Container } from "@/components/site/container";
@@ -169,13 +170,17 @@ export default function EmailAgentPage() {
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button asChild size="lg">
-                  <Link href="/contact">
-                    Book a demo
+                  <a
+                    href={siteConfig.emailAgentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Try it free
                     <ArrowRight className="size-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="/ai-agents">Explore AI agents</Link>
+                  <Link href="/contact">Book a demo</Link>
                 </Button>
               </div>
             </Reveal>
@@ -302,9 +307,9 @@ export default function EmailAgentPage() {
 
       <CTABand
         title="Never lose a lead in your inbox again"
-        subtitle="Connect an inbox and watch the Email Agent surface and deliver leads on a live demo — in minutes."
-        primary={{ label: "Book a demo", href: "/contact" }}
-        secondary={{ label: "See AI consulting", href: "/ai-consulting" }}
+        subtitle="Connect an inbox and watch the Email Agent surface and deliver leads in minutes — try it free, no credit card."
+        primary={{ label: "Try it free", href: siteConfig.emailAgentUrl }}
+        secondary={{ label: "Book a demo", href: "/contact" }}
       />
     </>
   );

@@ -13,6 +13,18 @@ interface CTABandProps {
   secondary?: { label: string; href: string };
 }
 
+/** Renders a Next <Link> for internal hrefs, or a new-tab <a> for external. */
+function CTALink({ href, children }: { href: string; children: React.ReactNode }) {
+  if (/^https?:\/\//.test(href)) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
+  return <Link href={href}>{children}</Link>;
+}
+
 export function CTABand({
   eyebrow = "Get started",
   title,
@@ -39,13 +51,13 @@ export function CTABand({
             <p className="text-base text-muted md:text-lg">{subtitle}</p>
             <div className="mt-3 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
-                <Link href={primary.href}>
+                <CTALink href={primary.href}>
                   {primary.label}
                   <ArrowRight className="size-4" />
-                </Link>
+                </CTALink>
               </Button>
               <Button asChild size="lg" variant="secondary">
-                <Link href={secondary.href}>{secondary.label}</Link>
+                <CTALink href={secondary.href}>{secondary.label}</CTALink>
               </Button>
             </div>
           </div>

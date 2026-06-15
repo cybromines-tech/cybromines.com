@@ -28,6 +28,9 @@ export const siteConfig = {
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "971500000000",
   contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "",
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+  // Live Email Agent (CEA) web app — the "Try it free / Launch app" target.
+  emailAgentUrl:
+    process.env.NEXT_PUBLIC_EMAIL_AGENT_URL ?? "https://cbe.cybromines.com",
   // Search-engine ownership verification (set per provider in env).
   googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
   bingSiteVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? "",
