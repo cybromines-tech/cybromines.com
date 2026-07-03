@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.cybromines.com" }],
+      "destination": "https://cybromines.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cybrominescom.vercel.app" }],
+      "destination": "https://cybromines.com/:path*",
+      "permanent": true
+    }
+  ]
+}
