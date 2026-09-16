@@ -13,16 +13,23 @@ interface CTABandProps {
   secondary?: { label: string; href: string };
 }
 
-/** Renders a Next <Link> for internal hrefs, or a new-tab <a> for external. */
-function CTALink({ href, children }: { href: string; children: React.ReactNode }) {
+/**
+ * Renders a Next <Link> for internal hrefs, or a new-tab <a> for external.
+ * Forwards props so <Button asChild> can pass its className through Slot.
+ */
+function CTALink({ href, children, ...props }: React.ComponentProps<"a"> & { href: string }) {
   if (/^https?:\/\//.test(href)) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
       </a>
     );
   }
-  return <Link href={href}>{children}</Link>;
+  return (
+    <Link href={href} {...props}>
+      {children}
+    </Link>
+  );
 }
 
 export function CTABand({
