@@ -25,7 +25,7 @@ export default function OgImage() {
         {/* top bar */}
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
           <LogoMark width={77} height={44} dotColor="#FFFFFF" />
-          <LogoWordmark width={291} height={24} color="#FAFAFA" />
+          <LogoWordmark width={291} height={24} color="#FAFAFA" gradientId="og-home-wm" />
         </div>
 
         {/* headline */}

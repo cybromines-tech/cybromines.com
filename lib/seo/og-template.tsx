@@ -35,7 +35,7 @@ export function ogImage({
       >
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
           <LogoMark width={77} height={44} dotColor="#FFFFFF" />
-          <LogoWordmark width={291} height={24} color="#FAFAFA" />
+          <LogoWordmark width={291} height={24} color="#FAFAFA" gradientId="og-section-wm" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>

@@ -39,7 +39,7 @@ export default async function BlogOgImage({
       >
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
           <LogoMark width={70} height={40} dotColor="#FFFFFF" />
-          <LogoWordmark width={264} height={22} color="#FAFAFA" />
+          <LogoWordmark width={264} height={22} color="#FAFAFA" gradientId="og-blog-wm" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
