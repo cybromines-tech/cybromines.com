@@ -15,7 +15,7 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-background">
+    <footer className="theme-dark relative border-t border-border bg-background">
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden />
       <div className="container-page relative py-16 md:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">

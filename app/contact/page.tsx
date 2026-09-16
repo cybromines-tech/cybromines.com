@@ -80,7 +80,7 @@ export default function ContactPage() {
                 rel={card.label === "WhatsApp" ? "noopener noreferrer" : undefined}
                 className="group surface-card flex items-center gap-4 p-5 transition-colors hover:border-border-strong"
               >
-                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                   <card.icon className="size-5" />
                 </span>
                 <span className="flex flex-col">
@@ -93,7 +93,7 @@ export default function ContactPage() {
             {/* Office + map placeholder */}
             <div className="surface-card overflow-hidden">
               <div className="flex items-center gap-4 p-5">
-                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                   <MapPin className="size-5" />
                 </span>
                 <span className="flex flex-col">
@@ -115,7 +115,7 @@ export default function ContactPage() {
                 />
                 <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2">
                   <span className="relative flex size-3.5">
-                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-cyan/40" />
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand-bright/40" />
                     <span className="relative inline-flex size-3.5 rounded-full bg-accent-gradient" />
                   </span>
                   <span className="rounded-full border border-border bg-background/80 px-2.5 py-1 font-mono text-[11px] text-foreground backdrop-blur">

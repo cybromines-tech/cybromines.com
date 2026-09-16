@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Signature "neural beam" — a dot grid whose connection lines pulse a violet→cyan
+ * Signature "neural beam" — a dot grid whose connection lines pulse a brand-red
  * beam along paths, suggesting agents passing messages.
  *
  * Pure SVG + CSS animation (keyframes in globals.css). No JS runtime, no canvas,
@@ -61,8 +61,8 @@ export function NeuralBeam({ className, variant = "hero" }: NeuralBeamProps) {
     >
       <defs>
         <linearGradient id={`beam-grad-${variant}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#7C3AED" />
-          <stop offset="100%" stopColor="#22D3EE" />
+          <stop offset="0%" stopColor="#E13946" />
+          <stop offset="100%" stopColor="#FF5C69" />
         </linearGradient>
       </defs>
 

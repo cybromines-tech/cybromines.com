@@ -145,7 +145,7 @@ export default function EmailAgentPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
-                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                   <Mail className="size-4" />
                 </span>
                 Cybromines Email Agent · CEA
@@ -160,8 +160,8 @@ export default function EmailAgentPage() {
                 webhook — so no opportunity ever gets buried again.
               </p>
               <div className="mt-7">
-                <span className="inline-flex items-start gap-2.5 rounded-xl border border-violet/25 bg-violet/5 px-4 py-3">
-                  <Sparkles className="mt-0.5 size-4 shrink-0 text-cyan" />
+                <span className="inline-flex items-start gap-2.5 rounded-xl border border-brand/25 bg-brand/5 px-4 py-3">
+                  <Sparkles className="mt-0.5 size-4 shrink-0 text-brand-bright" />
                   <span className="text-sm text-foreground">
                     Connect Gmail or any IMAP inbox → AI flags leads → delivered to
                     your webhook in seconds.
@@ -232,7 +232,7 @@ export default function EmailAgentPage() {
             {useCases.map((uc, i) => (
               <Reveal key={uc.dept} delay={i} as="div">
                 <div className="surface-card h-full p-7">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                     <uc.icon className="size-5" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-medium tracking-tight">
@@ -280,7 +280,7 @@ export default function EmailAgentPage() {
                   { icon: Activity, t: "Full visibility into what was captured" },
                 ].map((x) => (
                   <li key={x.t} className="flex items-center gap-3 text-[15px] text-foreground/90">
-                    <span className="flex size-8 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                    <span className="flex size-8 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                       <x.icon className="size-4" />
                     </span>
                     {x.t}

@@ -147,7 +147,7 @@ export default async function ServiceDetailPage({
 
             <Reveal delay={1}>
               <div className="surface-card flex h-full flex-col justify-center gap-4 p-8">
-                <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                   <Handshake className="size-5" />
                 </span>
                 <h3 className="font-display text-xl font-medium tracking-tight">

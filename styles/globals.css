@@ -7,28 +7,37 @@
 /* ------------------------------------------------------------------ */
 /* Design tokens — dark is the base (:root); .light overrides          */
 /* ------------------------------------------------------------------ */
-:root {
-  --background: #09090b;
-  --surface: #101014;
-  --surface-elevated: #16161c;
+:root,
+.theme-dark {
+  /* Brand: red #E13946 · black #111015 · white (from the logo) */
+  --background: #111015;
+  --surface: #17161c;
+  --surface-elevated: #1e1d24;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.14);
   --foreground: #fafafa;
   --muted: #a1a1aa;
-  --muted-subtle: #71717a;
-  --accent-violet: #7c3aed;
-  --accent-cyan: #22d3ee;
+  --muted-subtle: #85858e;
+  --brand: #e13946;
+  --brand-bright: #ff5c69;
   --success: #34d399;
 
   /* derived helpers */
-  --ring: var(--accent-cyan);
+  --ring: var(--brand-bright);
   --beam-dot: rgba(255, 255, 255, 0.14);
   --beam-line: rgba(255, 255, 255, 0.05);
-  --glow-violet: rgba(124, 58, 237, 0.18);
-  --glow-cyan: rgba(34, 211, 238, 0.14);
-  --selection: rgba(124, 58, 237, 0.35);
+  --glow-brand: rgba(225, 57, 70, 0.2);
+  --glow-brand-bright: rgba(255, 92, 105, 0.12);
+  --selection: rgba(225, 57, 70, 0.4);
   --shadow-card: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
     0 24px 48px -24px rgba(0, 0, 0, 0.7);
+
+  --hero-glow: rgba(225, 57, 70, 0.1);
+
+  --btn-secondary-bg: var(--surface);
+  --btn-secondary-fg: var(--foreground);
+  --btn-secondary-border: var(--border-strong);
+  --btn-secondary-hover: var(--surface-elevated);
 }
 
 .light {
@@ -37,21 +46,35 @@
   --surface-elevated: #ffffff;
   --border: rgba(9, 9, 11, 0.09);
   --border-strong: rgba(9, 9, 11, 0.16);
-  --foreground: #0b0b0f;
+  --foreground: #111015;
   --muted: #52525b;
-  --muted-subtle: #71717a;
-  --accent-violet: #6d28d9;
-  --accent-cyan: #0891b2;
+  --muted-subtle: #6b6b74;
+  --brand: #c11f33;
+  --brand-bright: #d42c3e;
   --success: #059669;
 
-  --ring: var(--accent-violet);
+  --ring: var(--brand);
   --beam-dot: rgba(9, 9, 11, 0.16);
   --beam-line: rgba(9, 9, 11, 0.06);
-  --glow-violet: rgba(124, 58, 237, 0.1);
-  --glow-cyan: rgba(34, 211, 238, 0.1);
-  --selection: rgba(124, 58, 237, 0.2);
+  --glow-brand: rgba(225, 57, 70, 0.1);
+  --glow-brand-bright: rgba(225, 57, 70, 0.06);
+  --selection: rgba(225, 57, 70, 0.2);
   --shadow-card: 0 1px 2px 0 rgba(9, 9, 11, 0.04),
     0 20px 40px -28px rgba(9, 9, 11, 0.22);
+
+  --hero-glow: rgba(225, 57, 70, 0.05);
+
+  /* Brand black secondary buttons keep red · black · white in play on light pages */
+  --btn-secondary-bg: #111015;
+  --btn-secondary-fg: #ffffff;
+  --btn-secondary-border: #111015;
+  --btn-secondary-hover: #2a2930;
+}
+
+/* Brand-black band: forces dark tokens on a subtree, even in light mode. */
+.theme-dark {
+  color: var(--foreground);
+  color-scheme: dark;
 }
 
 /* ------------------------------------------------------------------ */
@@ -66,8 +89,8 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-muted-subtle: var(--muted-subtle);
-  --color-violet: var(--accent-violet);
-  --color-cyan: var(--accent-cyan);
+  --color-brand: var(--brand);
+  --color-brand-bright: var(--brand-bright);
   --color-success: var(--success);
   --color-ring: var(--ring);
 
@@ -138,15 +161,21 @@
 /* ------------------------------------------------------------------ */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+    background: linear-gradient(135deg, var(--brand-bright) 0%, var(--brand) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
 
+  /* Solid-feeling brand red; fixed in both themes so white text stays AA. */
   .bg-accent-gradient {
-    background-image: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+    background-image: linear-gradient(135deg, #e13946 0%, #a81a2b 100%);
+  }
+
+  /* Primary CTA: brand red flowing into brand black. White text stays AA across it. */
+  .bg-cta-gradient {
+    background-image: linear-gradient(135deg, #e13946 0%, #a51b2b 48%, #111015 100%);
   }
 
   .border-gradient-top {
@@ -157,7 +186,7 @@
     position: absolute;
     inset: 0 0 auto 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent-violet), var(--accent-cyan), transparent);
+    background: linear-gradient(90deg, transparent, var(--brand), var(--brand-bright), transparent);
     opacity: 0.7;
   }
 
@@ -178,8 +207,8 @@
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
   }
 
-  .glow-violet {
-    box-shadow: 0 0 80px -20px var(--glow-violet);
+  .glow-brand {
+    box-shadow: 0 0 80px -20px var(--glow-brand);
   }
 
   .surface-card {
@@ -403,7 +432,7 @@ html.js .reveal.reveal-in {
   --tw-prose-bullets: var(--border-strong);
   --tw-prose-hr: var(--border);
   --tw-prose-quotes: var(--foreground);
-  --tw-prose-quote-borders: var(--accent-violet);
+  --tw-prose-quote-borders: var(--brand);
   --tw-prose-captions: var(--muted-subtle);
   --tw-prose-code: var(--foreground);
   --tw-prose-pre-code: #e4e4e7;
@@ -419,7 +448,7 @@ html.js .reveal.reveal-in {
   transition: border-color 0.2s;
 }
 .prose-cybromines a:hover {
-  border-color: var(--accent-cyan);
+  border-color: var(--brand-bright);
 }
 .prose-cybromines h2 {
   scroll-margin-top: 6rem;
@@ -476,8 +505,8 @@ html.js .reveal.reveal-in {
   padding: 0 0.1rem;
 }
 .prose-cybromines [data-highlighted-line] {
-  background: rgba(124, 58, 237, 0.12);
-  border-left: 2px solid var(--accent-violet);
+  background: rgba(225, 57, 70, 0.12);
+  border-left: 2px solid var(--brand);
   margin-left: -1.25rem;
   padding-left: calc(1.25rem - 2px);
 }

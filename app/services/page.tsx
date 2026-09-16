@@ -42,7 +42,7 @@ export default function ServicesPage() {
                     href={`/services/${service.slug}`}
                     className="group grid grid-cols-1 gap-6 rounded-card border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong md:grid-cols-[auto_1fr_auto] md:items-center md:p-9"
                   >
-                    <span className="inline-flex size-14 items-center justify-center rounded-2xl border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
+                    <span className="inline-flex size-14 items-center justify-center rounded-2xl border border-border bg-surface-elevated text-brand-bright transition-colors group-hover:border-border-strong">
                       <Icon className="size-6" />
                     </span>
                     <div>

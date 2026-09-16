@@ -35,7 +35,7 @@ export function CrossSell({
                   className="group flex h-full flex-col rounded-card border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-surface-elevated text-cyan">
+                    <span className="inline-flex size-10 items-center justify-center rounded-lg border border-border bg-surface-elevated text-brand-bright">
                       <Icon className="size-[18px]" />
                     </span>
                     <ArrowUpRight className="size-4 text-muted-subtle transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />

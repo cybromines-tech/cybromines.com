@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 type CalloutType = "note" | "tip" | "warning";
 
 const config: Record<CalloutType, { icon: LucideIcon; className: string }> = {
-  note: { icon: Info, className: "border-cyan/30 bg-cyan/5" },
-  tip: { icon: Lightbulb, className: "border-violet/30 bg-violet/5" },
+  note: { icon: Info, className: "border-brand-bright/30 bg-brand-bright/5" },
+  tip: { icon: Lightbulb, className: "border-brand/30 bg-brand/5" },
   warning: { icon: AlertTriangle, className: "border-amber-500/30 bg-amber-500/5" },
 };
 

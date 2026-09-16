@@ -26,9 +26,9 @@ export function ogImage({
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#09090B",
+          background: "#111015",
           backgroundImage:
-            "radial-gradient(circle at 15% 0%, rgba(124,58,237,0.35), transparent 45%), radial-gradient(circle at 88% 100%, rgba(34,211,238,0.28), transparent 45%)",
+            "radial-gradient(circle at 15% 0%, rgba(225,57,70,0.32), transparent 45%), radial-gradient(circle at 88% 100%, rgba(255,255,255,0.08), transparent 45%)",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
@@ -44,7 +44,7 @@ export function ogImage({
               fontSize: "22px",
               textTransform: "uppercase",
               letterSpacing: "0.16em",
-              color: "#22D3EE",
+              color: "#FF5C69",
             }}
           >
             {eyebrow}

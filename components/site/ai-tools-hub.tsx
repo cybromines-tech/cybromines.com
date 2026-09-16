@@ -27,7 +27,7 @@ export function AiToolsHub({ className }: { className?: string }) {
 
       {/* center: the AI layer */}
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5">
-        <span className="flex size-16 items-center justify-center rounded-2xl bg-accent-gradient text-white shadow-[0_0_40px_-8px_rgba(124,58,237,0.6)]">
+        <span className="flex size-16 items-center justify-center rounded-2xl bg-accent-gradient text-white shadow-[0_0_40px_-8px_rgba(225,57,70,0.6)]">
           <Cpu className="size-7" />
         </span>
         <span className="rounded-full border border-border bg-surface px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-muted">

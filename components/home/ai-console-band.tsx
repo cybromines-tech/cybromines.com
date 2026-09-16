@@ -14,7 +14,7 @@ const capabilities = [
 
 export function AiConsoleBand() {
   return (
-    <section className="border-y border-border bg-surface/30 py-24 md:py-32">
+    <section className="theme-dark border-y border-border bg-background py-24 md:py-32">
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
@@ -34,7 +34,7 @@ export function AiConsoleBand() {
             <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {capabilities.map((cap) => (
                 <li key={cap.title} className="flex gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                     <cap.icon className="size-[18px]" />
                   </span>
                   <span className="flex flex-col">

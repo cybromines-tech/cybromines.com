@@ -64,7 +64,7 @@ function ResultRow({ line }: { line: HistoryLine }) {
   return (
     <div className="mb-2.5">
       <div className="flex items-start gap-2 text-foreground/90">
-        <span className="select-none text-violet">❯</span>
+        <span className="select-none text-brand">❯</span>
         <span className="text-muted-subtle">[{line.sys}]</span>
         <span>{line.cmd}</span>
       </div>
@@ -132,19 +132,19 @@ export function AiConsole({ className }: { className?: string }) {
           {/* active line */}
           <div>
             <div className="flex items-start gap-2 text-foreground">
-              <span className="select-none text-violet">❯</span>
+              <span className="select-none text-brand">❯</span>
               <span className="text-muted-subtle">[{current.sys}]</span>
               <span>
                 {typed}
                 <span
-                  className="ml-0.5 inline-block h-[1.05em] w-[7px] translate-y-[2px] bg-cyan"
+                  className="ml-0.5 inline-block h-[1.05em] w-[7px] translate-y-[2px] bg-brand-bright"
                   style={{ animation: "caret-blink 1s step-end infinite" }}
                 />
               </span>
             </div>
             {phase === "running" && (
               <div className="mt-0.5 flex items-center gap-2 pl-4 text-muted">
-                <Loader2 className="size-3 animate-spin text-cyan" />
+                <Loader2 className="size-3 animate-spin text-brand-bright" />
                 <span>agent running…</span>
               </div>
             )}

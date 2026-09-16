@@ -18,7 +18,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
       <SystemMockup variant={solution.mockup} />
       <div className="mt-5 flex items-start justify-between gap-3">
         <span className="flex items-center gap-2.5">
-          <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
+          <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-brand-bright transition-colors group-hover:border-border-strong">
             <Icon className="size-[18px]" />
           </span>
           <h3 className="font-display text-base font-medium tracking-tight text-foreground">
@@ -47,7 +47,7 @@ function FlagshipCard({ solution }: { solution: Solution }) {
     >
       <div className="flex flex-1 flex-col">
         <span className="flex items-center gap-2.5">
-          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+          <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
             <Icon className="size-5" />
           </span>
           <h3 className="font-display text-xl font-medium tracking-tight text-foreground">
@@ -109,10 +109,10 @@ export function SolutionsBento() {
             <Link
               href="/services/custom-software"
               className={cn(
-                "group flex h-full flex-col justify-between rounded-card border border-dashed border-border-strong bg-surface/40 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/40",
+                "group flex h-full flex-col justify-between rounded-card border border-dashed border-border-strong bg-surface/40 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-bright/40",
               )}
             >
-              <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+              <span className="inline-flex size-10 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                 <Code2 className="size-5" />
               </span>
               <div className="mt-6">

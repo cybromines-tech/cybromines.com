@@ -22,16 +22,16 @@ export function BlogCover({
 }) {
   const h = hash(seed);
   const angle = h % 360;
-  const hue1 = 258; // violet
-  const hue2 = 187; // cyan
-  const shift = (h % 40) - 20;
+  // Brand red glow + a soft white counter-light; slug varies position and warmth.
+  const hue = 352 + (h % 12);
+  const whiteAlpha = 0.1 + (h % 8) / 100;
 
   return (
     <div
       className={cn("relative overflow-hidden bg-surface-elevated", className)}
       aria-hidden="true"
       style={{
-        backgroundImage: `radial-gradient(120% 120% at ${20 + (h % 60)}% 0%, hsl(${hue1} 70% 55% / 0.5), transparent 55%), radial-gradient(120% 120% at ${80 - (h % 50)}% 100%, hsl(${hue2 + shift} 75% 55% / 0.45), transparent 55%)`,
+        backgroundImage: `radial-gradient(120% 120% at ${20 + (h % 60)}% 0%, hsl(${hue} 74% 55% / 0.55), transparent 55%), radial-gradient(120% 120% at ${80 - (h % 50)}% 100%, rgba(255,255,255,${whiteAlpha}), transparent 55%)`,
       }}
     >
       <div

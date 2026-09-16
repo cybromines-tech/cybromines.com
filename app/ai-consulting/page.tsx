@@ -126,7 +126,7 @@ export default function AiConsultingPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
-                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                   <Sparkles className="size-4" />
                 </span>
                 AI consulting &amp; integration
@@ -209,7 +209,7 @@ export default function AiConsultingPage() {
             {toolGroups.map((g, i) => (
               <Reveal key={g.group} delay={i} as="div">
                 <div className="surface-card h-full p-6">
-                  <p className="font-mono text-xs uppercase tracking-widest text-cyan">
+                  <p className="font-mono text-xs uppercase tracking-widest text-brand-bright">
                     {g.group}
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-2">
@@ -241,7 +241,7 @@ export default function AiConsultingPage() {
             {useCases.map((uc, i) => (
               <Reveal key={uc.dept} delay={i % 3} as="div">
                 <div className="surface-card h-full p-6">
-                  <p className="font-mono text-xs uppercase tracking-widest text-cyan">
+                  <p className="font-mono text-xs uppercase tracking-widest text-brand-bright">
                     {uc.dept}
                   </p>
                   <ul className="mt-3 flex flex-col gap-2">

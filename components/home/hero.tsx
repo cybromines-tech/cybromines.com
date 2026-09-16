@@ -16,7 +16,7 @@ export function Hero() {
       {/* atmosphere */}
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-60" aria-hidden />
       <div
-        className="pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-[520px] w-[900px] max-w-full -translate-x-1/2 rounded-full bg-violet/10 blur-[130px]"
+        className="pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-[520px] w-[900px] max-w-full -translate-x-1/2 rounded-full bg-(--hero-glow) blur-[130px]"
         aria-hidden
       />
 
@@ -28,7 +28,7 @@ export function Hero() {
               {...rise(40)}
               className="hero-rise inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-3.5 py-1.5 text-[13px] text-muted backdrop-blur"
             >
-              <Sparkles className="size-3.5 text-cyan" />
+              <Sparkles className="size-3.5 text-brand-bright" />
               AI-native software house
             </span>
 

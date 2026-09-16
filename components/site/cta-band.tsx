@@ -35,12 +35,12 @@ export function CTABand({
   return (
     <section className="py-24 md:py-32">
       <Container>
-        <Reveal className="relative overflow-hidden rounded-[28px] border border-border bg-surface px-6 py-16 text-center md:px-16 md:py-24">
+        <Reveal className="theme-dark relative overflow-hidden rounded-[28px] border border-border bg-surface px-6 py-16 text-center md:px-16 md:py-24">
           <div className="pointer-events-none absolute inset-0 opacity-50" aria-hidden>
             <NeuralBeam />
           </div>
           <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet to-transparent"
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand to-transparent"
             aria-hidden
           />
           <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">

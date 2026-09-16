@@ -26,7 +26,7 @@ export function FeatureCard({
       )}
     >
       {Icon ? (
-        <span className="mb-5 inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
+        <span className="mb-5 inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright transition-colors group-hover:border-border-strong">
           <Icon className="size-5" />
         </span>
       ) : null}

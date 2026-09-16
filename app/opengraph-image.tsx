@@ -17,7 +17,7 @@ export default function OgImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#09090B",
+          background: "#111015",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
@@ -45,7 +45,7 @@ export default function OgImage() {
             <span>reimagined with&nbsp;</span>
             <span
               style={{
-                background: "linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)",
+                background: "linear-gradient(135deg, #FF5C69 0%, #E13946 100%)",
                 backgroundClip: "text",
                 color: "transparent",
               }}

@@ -209,7 +209,7 @@ export default function AIAgentsPage() {
                     className="group flex h-full flex-col rounded-card border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong"
                   >
                     <div className="flex items-center gap-2.5">
-                      <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
+                      <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-brand-bright transition-colors group-hover:border-border-strong">
                         <Icon className="size-[18px]" />
                       </span>
                       <h3 className="font-display text-base font-medium tracking-tight text-foreground">
@@ -259,7 +259,7 @@ export default function AIAgentsPage() {
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {useCases.map((uc) => (
                   <div key={uc.dept} className="rounded-xl border border-border bg-surface p-5">
-                    <p className="font-mono text-xs uppercase tracking-widest text-cyan">
+                    <p className="font-mono text-xs uppercase tracking-widest text-brand-bright">
                       {uc.dept}
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
@@ -296,7 +296,7 @@ export default function AIAgentsPage() {
             {security.map((item, i) => (
               <Reveal key={item.title} delay={i} as="div">
                 <div className="surface-card h-full p-7">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                     <item.icon className="size-5" />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-medium tracking-tight">

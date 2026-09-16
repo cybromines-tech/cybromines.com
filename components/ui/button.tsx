@@ -8,11 +8,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Signature gradient CTA — gradient angle shifts subtly on hover.
+        // Signature CTA: red → black gradient; inset hairline keeps the black end
+        // defined on dark backgrounds.
         primary:
-          "bg-accent-gradient text-white shadow-[0_8px_30px_-12px_rgba(124,58,237,0.6)] hover:shadow-[0_12px_40px_-10px_rgba(34,211,238,0.5)] hover:brightness-110",
+          "bg-cta-gradient text-white ring-1 ring-inset ring-white/12 shadow-[0_8px_30px_-12px_rgba(225,57,70,0.6)] hover:shadow-[0_12px_40px_-10px_rgba(225,57,70,0.75)] hover:brightness-125",
         secondary:
-          "border border-border-strong bg-surface text-foreground hover:bg-surface-elevated hover:border-border-strong",
+          "border border-(--btn-secondary-border) bg-(--btn-secondary-bg) text-(--btn-secondary-fg) hover:bg-(--btn-secondary-hover)",
         ghost:
           "text-muted hover:text-foreground hover:bg-surface",
         outline:

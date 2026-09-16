@@ -25,7 +25,7 @@ export function ServicesRow() {
                   className="group flex h-full flex-col rounded-card border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong"
                 >
                   <div className="flex items-start justify-between">
-                    <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan transition-colors group-hover:border-border-strong">
+                    <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright transition-colors group-hover:border-border-strong">
                       <Icon className="size-5" />
                     </span>
                     <ArrowUpRight className="size-5 text-muted-subtle transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />

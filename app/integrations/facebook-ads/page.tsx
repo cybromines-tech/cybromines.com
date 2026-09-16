@@ -128,7 +128,7 @@ export default function FacebookAdsPage() {
             {flow.map((step, i) => (
               <Reveal key={step.title} delay={i} as="div">
                 <div className="surface-card relative flex h-full flex-col gap-3 p-6">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                     <step.icon className="size-5" />
                   </span>
                   <h3 className="font-display text-base font-medium tracking-tight">

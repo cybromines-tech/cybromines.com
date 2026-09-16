@@ -97,7 +97,7 @@ export function MobileMenu() {
                               onClick={close}
                               className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-muted hover:bg-surface hover:text-foreground"
                             >
-                              <Icon className="size-4 text-cyan" />
+                              <Icon className="size-4 text-brand-bright" />
                               {child.label}
                             </Link>
                           </li>

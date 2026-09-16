@@ -16,7 +16,7 @@ function FacebookFlow() {
     <div className="flex flex-col gap-3">
       {steps.map((step, i) => (
         <div key={step.label} className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border-strong bg-surface-elevated text-cyan">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-border-strong bg-surface-elevated text-brand-bright">
             <step.icon className="size-5" />
           </span>
           <span className="flex-1 rounded-xl border border-border bg-surface px-4 py-3 text-sm font-medium text-foreground">

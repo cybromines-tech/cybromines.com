@@ -40,8 +40,8 @@ function Erp() {
 
 function Crm() {
   const cols = [
-    { t: "New", n: 2, c: "bg-cyan/60" },
-    { t: "Qualified", n: 3, c: "bg-violet/60" },
+    { t: "New", n: 2, c: "bg-brand-bright/60" },
+    { t: "Qualified", n: 3, c: "bg-brand/60" },
     { t: "Won", n: 1, c: "bg-success/60" },
   ];
   return (
@@ -183,7 +183,7 @@ function Queue() {
             </span>
           ))}
         </div>
-        <p className="font-mono text-[9px] text-cyan">~4 min wait · counter 3</p>
+        <p className="font-mono text-[9px] text-brand-bright">~4 min wait · counter 3</p>
       </div>
     </Shell>
   );

@@ -40,7 +40,7 @@ export function TableOfContents({ items }: { items: TocItem[] }) {
                 "-ml-px block border-l-2 py-1 text-sm transition-colors",
                 item.depth === 3 ? "pl-6" : "pl-4",
                 activeId === item.id
-                  ? "border-cyan text-foreground"
+                  ? "border-brand-bright text-foreground"
                   : "border-transparent text-muted hover:text-foreground",
               )}
             >

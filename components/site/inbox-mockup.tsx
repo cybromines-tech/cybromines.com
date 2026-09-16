@@ -29,8 +29,8 @@ export function InboxMockup({ className }: { className?: string }) {
       {/* header */}
       <div className="flex items-center justify-between border-b border-border bg-surface-elevated/60 px-4 py-3">
         <span className="font-display text-sm font-semibold text-foreground">Inbox</span>
-        <span className="flex items-center gap-1.5 rounded-full border border-violet/30 bg-violet/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-foreground">
-          <Sparkles className="size-3 text-cyan" /> agent on
+        <span className="flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-foreground">
+          <Sparkles className="size-3 text-brand-bright" /> agent on
         </span>
       </div>
 
@@ -41,7 +41,7 @@ export function InboxMockup({ className }: { className?: string }) {
             key={i}
             className={cn(
               "flex items-center justify-between gap-3 border-b border-border px-4 py-3",
-              m.lead && "bg-violet/[0.06]",
+              m.lead && "bg-brand/[0.06]",
             )}
           >
             <span className="flex min-w-0 flex-col">

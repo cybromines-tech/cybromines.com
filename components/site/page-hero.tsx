@@ -43,7 +43,7 @@ export function PageHero({
         <div className="max-w-3xl">
           <span className="eyebrow inline-flex items-center gap-2.5">
             {Icon ? (
-              <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+              <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                 <Icon className="size-4" />
               </span>
             ) : (

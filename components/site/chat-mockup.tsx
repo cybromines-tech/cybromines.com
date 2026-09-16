@@ -82,7 +82,7 @@ export function ChatMockup({ className }: { className?: string }) {
         <span className="font-mono text-[11px] uppercase tracking-wide text-muted-subtle">
           Pipeline
         </span>
-        <span className="rounded-full border border-violet/40 bg-violet/10 px-2.5 py-1 text-[11px] font-medium text-foreground">
+        <span className="rounded-full border border-brand/40 bg-brand/10 px-2.5 py-1 text-[11px] font-medium text-foreground">
           Quote sent · AED 18.4k
         </span>
       </div>

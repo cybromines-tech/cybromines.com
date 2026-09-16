@@ -38,7 +38,7 @@ function PhoneFrame({
     <div className="relative mx-auto w-[260px]">
       {/* glow */}
       <div
-        className="absolute -inset-8 -z-10 rounded-full bg-violet/20 blur-3xl"
+        className="absolute -inset-8 -z-10 rounded-full bg-brand/20 blur-3xl"
         aria-hidden
       />
       <div className="rounded-[2.4rem] border border-border-strong bg-surface-elevated p-2.5 shadow-2xl">

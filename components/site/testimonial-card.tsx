@@ -16,7 +16,7 @@ export function TestimonialCard({
         className,
       )}
     >
-      <Quote className="size-7 text-violet" aria-hidden />
+      <Quote className="size-7 text-brand" aria-hidden />
       <blockquote className="flex-1 text-[15px] leading-relaxed text-foreground/90">
         “{testimonial.quote}”
       </blockquote>

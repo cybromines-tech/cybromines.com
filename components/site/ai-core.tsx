@@ -30,7 +30,7 @@ export function AiCore({ className }: { className?: string }) {
     <div className={cn("relative mx-auto aspect-square w-full max-w-[36rem]", className)}>
       {/* ambient glow */}
       <div
-        className="pointer-events-none absolute inset-[18%] -z-10 rounded-full bg-violet/20 blur-[60px]"
+        className="pointer-events-none absolute inset-[18%] -z-10 rounded-full bg-brand/20 blur-[60px]"
         aria-hidden
       />
 
@@ -43,8 +43,8 @@ export function AiCore({ className }: { className?: string }) {
       >
         <defs>
           <linearGradient id="core-beam" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#7C3AED" />
-            <stop offset="100%" stopColor="#22D3EE" />
+            <stop offset="0%" stopColor="#E13946" />
+            <stop offset="100%" stopColor="#FF5C69" />
           </linearGradient>
         </defs>
         {/* faint static connections */}
@@ -79,7 +79,7 @@ export function AiCore({ className }: { className?: string }) {
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2">
         <div className="relative">
           <span className="absolute -inset-4 animate-[core-breathe_3s_ease-in-out_infinite] rounded-full bg-accent-gradient opacity-40 blur-xl" aria-hidden />
-          <span className="relative flex size-[clamp(4.5rem,12vw,6rem)] items-center justify-center rounded-[28%] bg-accent-gradient text-white shadow-[0_0_50px_-6px_rgba(124,58,237,0.7)]">
+          <span className="relative flex size-[clamp(4.5rem,12vw,6rem)] items-center justify-center rounded-[28%] bg-accent-gradient text-white shadow-[0_0_50px_-6px_rgba(225,57,70,0.7)]">
             <Sparkles className="size-1/2" />
           </span>
         </div>
@@ -98,7 +98,7 @@ export function AiCore({ className }: { className?: string }) {
             style={{ left: `${n.x}%`, top: `${n.y}%` }}
           >
             <div className="flex flex-col items-center gap-1.5 transition-transform duration-300 group-hover:-translate-y-0.5">
-              <span className="flex size-[clamp(2.5rem,7vw,3.25rem)] items-center justify-center rounded-2xl border border-border-strong bg-surface-elevated/90 text-cyan shadow-lg backdrop-blur transition-colors group-hover:border-cyan/50">
+              <span className="flex size-[clamp(2.5rem,7vw,3.25rem)] items-center justify-center rounded-2xl border border-border-strong bg-surface-elevated/90 text-brand-bright shadow-lg backdrop-blur transition-colors group-hover:border-brand-bright/50">
                 <Icon className="size-[45%]" />
               </span>
               <span className="hidden rounded-md border border-border bg-surface/80 px-1.5 py-0.5 text-[10px] font-medium text-foreground backdrop-blur sm:block">

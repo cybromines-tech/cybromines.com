@@ -37,7 +37,7 @@ export function AiConsultingBand() {
             <ul className="mt-8 flex flex-col gap-4">
               {points.map((p) => (
                 <li key={p.title} className="flex gap-3.5">
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                     <p.icon className="size-5" />
                   </span>
                   <span className="flex flex-col">

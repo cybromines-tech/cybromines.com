@@ -10,8 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "AI-native enterprise software — ERP suite, AI agents, and WhatsApp CRM.",
     start_url: "/",
     display: "standalone",
-    background_color: "#09090B",
-    theme_color: "#09090B",
+    background_color: "#111015",
+    theme_color: "#111015",
     icons: [
       { src: "/icon.svg", sizes: "any", type: "image/svg+xml" },
       { src: "/apple-icon", sizes: "180x180", type: "image/png" },

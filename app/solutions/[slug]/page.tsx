@@ -85,7 +85,7 @@ export default async function SolutionPage({
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2.5">
-                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+                <span className="inline-flex size-7 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright">
                   <Icon className="size-4" />
                 </span>
                 {sol.category} · {sol.shortName}
@@ -97,8 +97,8 @@ export default async function SolutionPage({
                 {sol.promise}
               </p>
               <div className="mt-7">
-                <span className="inline-flex items-start gap-2.5 rounded-xl border border-violet/25 bg-violet/5 px-4 py-3">
-                  <Sparkles className="mt-0.5 size-4 shrink-0 text-cyan" />
+                <span className="inline-flex items-start gap-2.5 rounded-xl border border-brand/25 bg-brand/5 px-4 py-3">
+                  <Sparkles className="mt-0.5 size-4 shrink-0 text-brand-bright" />
                   <span className="text-sm text-foreground">{sol.aiHook}</span>
                 </span>
               </div>
@@ -191,7 +191,7 @@ export default async function SolutionPage({
                       className="group flex h-full flex-col rounded-card border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong"
                     >
                       <div className="flex items-center justify-between">
-                        <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-cyan">
+                        <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border bg-surface-elevated text-brand-bright">
                           <MIcon className="size-[18px]" />
                         </span>
                         <ArrowUpRight className="size-4 text-muted-subtle transition-all group-hover:text-foreground" />

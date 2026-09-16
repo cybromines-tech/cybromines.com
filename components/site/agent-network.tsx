@@ -24,7 +24,7 @@ export function AgentNetwork({ className }: { className?: string }) {
 
       {/* central hub */}
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5">
-        <span className="flex size-16 items-center justify-center rounded-2xl bg-accent-gradient text-white shadow-[0_0_40px_-8px_rgba(124,58,237,0.6)]">
+        <span className="flex size-16 items-center justify-center rounded-2xl bg-accent-gradient text-white shadow-[0_0_40px_-8px_rgba(225,57,70,0.6)]">
           <Cpu className="size-7" />
         </span>
         <span className="rounded-full border border-border bg-surface px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-muted">
@@ -35,7 +35,7 @@ export function AgentNetwork({ className }: { className?: string }) {
       {/* satellite nodes */}
       {nodes.map((node) => (
         <div key={node.label} className={cn("absolute flex items-center gap-2", node.pos)}>
-          <span className="flex size-9 items-center justify-center rounded-xl border border-border-strong bg-surface-elevated text-cyan">
+          <span className="flex size-9 items-center justify-center rounded-xl border border-border-strong bg-surface-elevated text-brand-bright">
             <node.icon className="size-4" />
           </span>
           <span className="hidden rounded-md border border-border bg-surface/80 px-2 py-1 text-[11px] font-medium text-foreground backdrop-blur sm:inline">

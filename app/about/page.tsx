@@ -112,7 +112,7 @@ export default function AboutPage() {
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i % 2} as="div">
                 <div className="surface-card flex h-full gap-5 p-7">
-                  <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-cyan">
+                  <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-elevated text-brand-bright">
                     <value.icon className="size-5" />
                   </span>
                   <div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <Reveal>
               <span className="eyebrow inline-flex items-center gap-2">
-                <MapPin className="size-3.5 text-cyan" /> Headquarters
+                <MapPin className="size-3.5 text-brand-bright" /> Headquarters
               </span>
               <h2 className="mt-4 text-[length:var(--text-section)] font-semibold leading-[1.1] tracking-tight">
                 Built in Dubai, for the region and beyond
@@ -176,7 +176,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2">
                   <span className="relative flex size-4">
-                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-cyan/40" />
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand-bright/40" />
                     <span className="relative inline-flex size-4 rounded-full bg-accent-gradient" />
                   </span>
                   <span className="rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[11px] text-foreground backdrop-blur">

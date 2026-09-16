@@ -4,7 +4,7 @@ import { stats as defaultStats, type Stat } from "@/lib/data/stats";
 
 export function StatBar({ stats = defaultStats }: { stats?: Stat[] }) {
   return (
-    <section className="border-y border-border bg-surface/40 py-16">
+    <section className="theme-dark border-y border-border bg-surface py-16">
       <Container>
         <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
           {stats.map((stat, i) => (

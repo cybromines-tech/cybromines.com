@@ -167,7 +167,7 @@ function NavEntry({
                   onClick={onClose}
                   className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-surface"
                 >
-                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-cyan transition-colors group-hover:border-border-strong">
+                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-brand-bright transition-colors group-hover:border-border-strong">
                     <Icon className="size-[18px]" />
                   </span>
                   <span className="flex flex-col">
