@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LogoMark, LogoWordmark } from "@/components/site/logo";
 import { getPost, getPublishedSlugs } from "@/lib/blog";
 
 export const dynamic = "force-static";
@@ -36,18 +37,9 @@ export default async function BlogOgImage({
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "11px",
-              background: "linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)",
-            }}
-          />
-          <div style={{ color: "#FAFAFA", fontSize: "28px", fontWeight: 600 }}>
-            Cybromines
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+          <LogoMark width={70} height={40} dotColor="#FFFFFF" />
+          <LogoWordmark width={264} height={22} color="#FAFAFA" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>

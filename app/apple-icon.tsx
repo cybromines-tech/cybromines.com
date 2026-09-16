@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LogoMark } from "@/components/site/logo";
 
 export const dynamic = "force-static";
 export const size = { width: 180, height: 180 };
@@ -14,26 +15,10 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#09090B",
+          background: "#111015",
         }}
       >
-        <div
-          style={{
-            width: "112px",
-            height: "112px",
-            borderRadius: "28px",
-            background: "linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#09090B",
-            fontSize: "72px",
-            fontWeight: 700,
-            fontFamily: "sans-serif",
-          }}
-        >
-          C
-        </div>
+        <LogoMark width={132} height={75} dotColor="#FFFFFF" />
       </div>
     ),
     { ...size },

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LogoMark, LogoWordmark } from "@/components/site/logo";
 
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
@@ -32,18 +33,9 @@ export function ogImage({
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)",
-            }}
-          />
-          <div style={{ color: "#FAFAFA", fontSize: "30px", fontWeight: 600 }}>
-            Cybromines
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+          <LogoMark width={77} height={44} dotColor="#FFFFFF" />
+          <LogoWordmark width={291} height={24} color="#FAFAFA" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>

@@ -17,7 +17,7 @@ export function organizationSchema() {
     url: pageUrl("/"),
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/icon.svg"),
+      url: absoluteUrl("/brand/cybromines-icon-512.png"),
       width: 512,
       height: 512,
     },
@@ -191,7 +191,7 @@ export function blogPostingSchema(input: {
       "@type": "Organization",
       "@id": ORG_ID,
       name: siteConfig.name,
-      logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg") },
+      logo: { "@type": "ImageObject", url: absoluteUrl("/brand/cybromines-icon-512.png") },
     },
     ...(input.tags && input.tags.length
       ? { keywords: input.tags.join(", "), articleSection: input.tags[0] }

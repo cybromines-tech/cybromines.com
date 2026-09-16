@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { LogoMark, LogoWordmark } from "@/components/site/logo";
 
 export const dynamic = "force-static";
 export const alt = "Cybromines — Enterprise software, reimagined with AI agents";
@@ -22,18 +23,9 @@ export default function OgImage() {
         }}
       >
         {/* top bar */}
-        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              width: "44px",
-              height: "44px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%)",
-            }}
-          />
-          <div style={{ color: "#FAFAFA", fontSize: "30px", fontWeight: 600 }}>
-            Cybromines
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
+          <LogoMark width={77} height={44} dotColor="#FFFFFF" />
+          <LogoWordmark width={291} height={24} color="#FAFAFA" />
         </div>
 
         {/* headline */}
